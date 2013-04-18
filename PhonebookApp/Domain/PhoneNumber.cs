@@ -19,5 +19,6 @@ namespace PhonebookApp.Domain
         //76763997 where full number is [+88][01][6]76763997
         //                              [conuntyCode][PhoneTypeCode][Operator]  
         public String Number { get; set; }
+        
     }
 }
