@@ -6,6 +6,26 @@
 
 <header>
     <link href="../../Styles/style.css" rel="stylesheet" />
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imageId')
+                        .attr('src', e.target.result)
+                        .width(223)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
 </header>
 <section>
     <fieldset id="add-contact">
@@ -40,51 +60,17 @@
                 @Html.ValidationMessageFor(m => m.HomeNumber)
             </li>
         </ol>
-        <div id="image-viewer"></div>
+        <div id="image-viewer">
+            <img id="imageId" src="../../Images/test-avatar.png" style="width : 223px; height : 200px;" alt="image"/>
+        </div>
         <br />
         <div id="image-selector">
             @Html.LabelFor(m => m.ImageLink)
-            <input type="file" name="File" onclick="" />
+            <input type="file" name="File" onchange="readURL(this);" accept="image/gif, image/jpeg, image/png" />
         </div>
         
     </fieldset>
 </section>
-
-
-
-
-
-@*<h2>Add</h2>
-<form>
-    
-    <label for="Name">Name:</label>
-    <input type="text" name="Name" />
-    
-
-    <label for="Mobile">Number:</label>
-    <div id="dynamic-number">
-        <input type="text" name="Mobile[]" />
-    </div>
-    <input type="button" value="Add" id="add-number"/>
-    <input type="button" value="Remove" id="remove-number"/>
-
-    <label for="Email">Email:</label>
-    <input type="text" name="Email[]" />
-
-
-
-    <label for="Address">Address:</label>
-    <textarea name="Address"></textarea>    
-    
-    <label for="OfficeContact">Office Contact:</label>
-    <input type="text" name="OfficeContact" />
-
-    <label for="HomeContact">Home Contact:</label>
-    <input type="text" name="HomeContact" />
-
-    <label for="Image">Image:</label>
-    <input type="file" name="Image" />
-</form>*@
 
 <script type='text/javascript'>
     $(function () {

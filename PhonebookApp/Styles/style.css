@@ -1,0 +1,28 @@
+﻿body {
+}
+
+#add-contact {
+    width : 90%;
+    height : 400px;
+}
+
+    #add-contact ol {
+        list-style-type : none;
+    }
+
+        #add-contact ol li {
+            margin-top : 10px;
+        }
+
+#image-viewer {
+    width : 223px;
+    height : 200px;
+    border-color : #808080;
+    margin : -320px 0 0 400px;
+    border:2px solid;
+    border-radius:10px;
+}
+
+#image-selector {
+    margin : 10px 0 0 400px;
+}
